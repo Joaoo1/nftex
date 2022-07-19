@@ -16,6 +16,11 @@ defmodule NftexWeb.Schema.Types.Root do
       resolve &ArtResolver.get/2
       middleware Log
     end
+
+    field :arts, list_of(:art) do
+      resolve &ArtResolver.list/2
+      middleware Log
+    end
   end
 
   object :root_mutation do
